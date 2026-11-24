@@ -18,13 +18,14 @@ nothing for them to install first.
 |---|---|---|
 | **[upload-action](https://github.com/betadrop-app/upload-action)** | GitHub Actions | One step in your workflow. The install link lands on the run summary and, optionally, in a pull-request comment that edits itself on every push. |
 | **[betadrop-cli](https://github.com/betadrop-app/betadrop-cli)** | Terminal | `betadrop publish app.ipa`. Prints the install link and a scannable QR code. |
-| **[betadrop-mcp](https://github.com/betadrop-app/betadrop-mcp)** | AI assistant | An MCP server, so Claude, Cursor or Copilot can publish builds and manage tokens without you leaving the editor. |
+| **[betadrop-mcp](https://github.com/betadrop-app/betadrop-mcp)** | AI assistant | An MCP server, so Claude, ChatGPT, Cursor or Copilot can publish builds, check they will install and read tester feedback. Hosted at `https://api.betadrop.app/mcp`, or run locally. |
+| **[fastlane-plugin-betadrop](https://github.com/betadrop-app/fastlane-plugin-betadrop)** | fastlane | `fastlane add_plugin betadrop`, then `betadrop` after `gym` or `gradle`. The install URL lands in `lane_context`. |
 
-[![Marketplace](https://img.shields.io/badge/Marketplace-BetaDrop%20Upload-2ea44f?logo=github)](https://github.com/marketplace/actions/betadrop-upload)
+[![Marketplace](https://img.shields.io/badge/Marketplace-BetaDrop%20IPA%20%26%20APK%20App%20Distribution-2ea44f?logo=github)](https://github.com/marketplace/actions/betadrop-ipa-apk-app-distribution)
 [![@betadrop/cli](https://img.shields.io/npm/v/@betadrop/cli?color=0b64fc&label=%40betadrop%2Fcli)](https://www.npmjs.com/package/@betadrop/cli)
 [![@betadrop/mcp](https://img.shields.io/npm/v/@betadrop/mcp?color=0b64fc&label=%40betadrop%2Fmcp)](https://www.npmjs.com/package/@betadrop/mcp)
 
-All three wrap the same API and share one account and one set of tokens. Everything here is MIT.
+They all wrap the same API and share one account and one set of tokens. Everything here is MIT.
 
 ---
 
@@ -57,8 +58,9 @@ Each one ends the same way: a link you can send, and a QR code a tester can scan
 
 ## One link that never changes
 
-A new build normally means a new link, which means telling everyone again. A **channel** is a fixed
-link that always serves the latest build published to it — set it once in CI and stop re-sending.
+A new build normally means a new link, which means telling everyone again. A
+**[standing link](https://betadrop.app/standing-links/)** is a fixed link that always serves the
+latest build published to it — set it once in CI and stop re-sending.
 Wrap it in the [Download from BetaDrop](https://betadrop.app/download-button/) badge and your own
 README stays current on every merge.
 
